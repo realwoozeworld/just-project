@@ -5,27 +5,32 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Cart</title>
   <link rel="stylesheet" href="css/styles.css">
+  <script defer src="js/cart.js"></script> <!-- Make sure path is correct -->
 </head>
 <body>
-    <header class="header">
-        <nav class="navbar">
-            <div class="logo"><a href="index.html">YourLogo</a></div>
-            <ul class="nav-links">
-              <li><a href="index.html">Home</a></li>
-              <li><a href="store.html">Store</a></li>
-              <li><a href="cart.html">Cart</a></li>
-              <li><a href="contact.html">Contact</a></li>
-            </ul>
-          </nav>
-      </header>
+  <header class="header">
+    <div class="navbar">
+      <div class="logo">MyStore</div>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="store.html">Store</a></li>
+        <li><a href="cart.html" class="active">Cart</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+  </header>
 
   <main>
-    <h1>Your Cart</h1>
-    <p>No items in your cart yet!</p>
+    <section class="cart-section">
+      <h1>Your Cart</h1>
+      <div id="cart-container"></div> <!-- Cart items will appear here -->
+      <div id="cart-total"></div> <!-- Cart total will appear here -->
+      <button id="checkout-btn" class="checkout-btn">Proceed to Checkout</button> <!-- Checkout button -->
+    </section>
   </main>
 
-  <footer>
-    <p>© 2024 Your Company. All Rights Reserved.</p>
+  <footer class="footer">
+    <p>&copy; 2024 MyStore. All rights reserved.</p>
   </footer>
 </body>
 </html>

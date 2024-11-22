@@ -3,32 +3,34 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Store</title>
+  <title>Store Page</title>
   <link rel="stylesheet" href="css/styles.css">
+  <script defer src="js/store.js"></script>
 </head>
 <body>
-  <!-- Header -->
   <header class="header">
-    <nav class="navbar">
-      <div class="logo"><a href="#">Brand</a></div>
+    <div class="navbar">
+      <div class="logo">MyStore</div>
       <ul class="nav-links">
         <li><a href="index.html">Home</a></li>
         <li><a href="store.html" class="active">Store</a></li>
         <li><a href="cart.html">Cart</a></li>
         <li><a href="contact.html">Contact</a></li>
       </ul>
-    </nav>
+    </div>
   </header>
 
-  <!-- Main Content -->
-  <main id="main-content">
-    <h2>Store Page</h2>
-    <p>This is the store page.</p>
+  <main>
+    <section class="store-section">
+      <h1>Our Products</h1>
+      <div id="product-container">
+        <!-- Products will be dynamically inserted here -->
+      </div>
+    </section>
   </main>
 
-  <!-- Footer -->
   <footer class="footer">
-    <p>© 2024 Your Company. All Rights Reserved.</p>
+    <p>&copy; 2024 MyStore. All rights reserved.</p>
   </footer>
 </body>
 </html>
