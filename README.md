@@ -35,7 +35,7 @@ Clone the repository:
 
 bash
 Copy code
-git clone https://github.com/yourusername/mystore.git
+git clone https://github.com/realwoozeworld/just-project
 Navigate to the project directory:
 
 bash
