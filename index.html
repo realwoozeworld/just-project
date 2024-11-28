@@ -5,43 +5,93 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Home</title>
   <link rel="stylesheet" href="css/styles.css">
+  <script defer src="js/common.js"></script>
+  <script defer src="js/script.js"></script>
 </head>
-  <body>
-    <!-- Header -->
-    <header class="header">
-      <nav class="navbar">
-        <div class="logo"><a href="index.html">SafeHouse</a></div>
-        <ul class="nav-links">
-          <li><a href="index.html" data-page="home" class="active">Home</a></li>
-          <li><a href="store.html" data-page="store">Store</a></li>
-          <li><a href="cart.html" data-page="cart">Cart</a></li>
-          <li><a href="contact.html" data-page="contact" class="">Contact</a></li>
-        </ul>
-      </nav>
-    </header>
-  
-    <!-- Hero Section -->
-    <section class="hero">
-      <div class="hero-overlay"></div>
-      <div class="hero-text">
-        <h1>Welcome to Our World</h1>
-        <p>Discover amazing products, unmatched quality, and unbeatable prices.</p>
-        <button>Explore Now</button>
+<body>
+  <!-- Header -->
+  <header class="header">
+    <nav class="navbar">
+      <div class="logo"><a href="index.html">SafeHouse</a></div>
+      <ul class="nav-links">
+        <li><a href="index.html" data-page="home" aria-current="page" class="active">Home</a></li>
+        <li><a href="store.html" data-page="store">Store</a></li>
+        <li><a href="cart.html" data-page="cart">Cart</a></li>
+        <li><a href="contact.html" data-page="contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-overlay"></div>
+    <div class="hero-text">
+      <h1>Welcome to Our World</h1>
+      <p>Discover amazing products, unmatched quality, and unbeatable prices.</p>
+      <button onclick="window.location.href='store.html'">Explore Now</button>
+    </div>
+  </section>
+
+  <!-- Featured Products Section -->
+  <section class="featured-products">
+    <h2>Featured Products</h2>
+    <div class="product-grid">
+      <div class="product-card">
+        <img src="https://via.placeholder.com/150" alt="Product 1">
+        <h3>Product 1</h3>
+        <p>$29.99</p>
+        <button onclick="window.location.href='store.html'">Shop Now</button>
       </div>
-    </section>
-  
-    <!-- Main Content -->
-    <main id="main-content">
-      <h2>Home Page Content</h2>
-      <p>Welcome to the Home Page!</p>
-    </main>
-  
-    <!-- Footer -->
-    <footer class="footer">
-      <p>© 2024 Your Company. All Rights Reserved.</p>
-    </footer>
-  
-    <script src="js/script.js"></script>
-  </body>
-  
+      <div class="product-card">
+        <img src="https://via.placeholder.com/150" alt="Product 2">
+        <h3>Product 2</h3>
+        <p>$39.99</p>
+        <button onclick="window.location.href='store.html'">Shop Now</button>
+      </div>
+      <div class="product-card">
+        <img src="https://via.placeholder.com/150" alt="Product 3">
+        <h3>Product 3</h3>
+        <p>$49.99</p>
+        <button onclick="window.location.href='store.html'">Shop Now</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials Section -->
+  <section class="testimonials">
+    <h2>What Our Customers Say</h2>
+    <div class="testimonial">
+      <p>"Amazing products and great service! Highly recommend." - Jane Doe</p>
+    </div>
+    <div class="testimonial">
+      <p>"Quick delivery and fantastic quality. Will buy again!" - John Smith</p>
+    </div>
+    <div class="testimonial">
+      <p>"Best shopping experience I've ever had." - Emma Wilson</p>
+    </div>
+  </section>
+
+  <!-- About Us Section -->
+  <section class="about">
+    <h2>About Us</h2>
+    <p>
+      At SafeHouse, we believe in providing high-quality products at unbeatable prices. 
+      With a wide range of offerings, we aim to cater to all your needs.
+    </p>
+    <p>
+      Join our journey and experience the difference!
+    </p>
+  </section>
+
+  <!-- Main Content -->
+  <main id="main-content">
+    <h2>Home Page Content</h2>
+    <p>Welcome to the Home Page! Explore our featured products above, or visit our store to discover more.</p>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <p>© 2024 SafeHouse. All Rights Reserved.</p>
+  </footer>
+</body>
 </html>

@@ -5,32 +5,38 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Store Page</title>
   <link rel="stylesheet" href="css/styles.css">
+  <script defer src="js/common.js"></script>
   <script defer src="js/store.js"></script>
+  <script defer src="js/script.js"></script>
 </head>
 <body>
+  <!-- Header -->
   <header class="header">
-    <div class="navbar">
-      <div class="logo">MyStore</div>
+    <nav class="navbar">
+      <div class="logo"><a href="index.html">SafeHouse</a></div>
       <ul class="nav-links">
         <li><a href="index.html">Home</a></li>
-        <li><a href="store.html" class="active">Store</a></li>
+        <li><a href="store.html" class="active" aria-current="page">Store</a></li>
         <li><a href="cart.html">Cart</a></li>
         <li><a href="contact.html">Contact</a></li>
       </ul>
-    </div>
+    </nav>
   </header>
 
+  <!-- Main Content -->
   <main>
     <section class="store-section">
       <h1>Our Products</h1>
       <div id="product-container">
         <!-- Products will be dynamically inserted here -->
+        <p>Loading products, please wait...</p>
       </div>
     </section>
   </main>
 
+  <!-- Footer -->
   <footer class="footer">
-    <p>&copy; 2024 MyStore. All rights reserved.</p>
+    <p>&copy; 2024 SafeHouse. All rights reserved.</p>
   </footer>
 </body>
 </html>
