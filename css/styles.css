@@ -743,3 +743,120 @@ button#apply-coupon:hover {
 .btn-return:hover {
   background-color: #0056b3;
 }
+
+/* Make layout responsive */
+@media screen and (max-width: 768px) {
+  /* Header */
+  .navbar {
+    flex-direction: column;
+    padding: 10px;
+  }
+  
+  .nav-links {
+    list-style: none;
+    display: block;
+    text-align: center;
+  }
+
+  .nav-links li {
+    margin: 10px 0;
+  }
+
+  /* Hero Section */
+  .hero {
+    text-align: center;
+    padding: 50px 10px;
+  }
+
+  /* Main Content */
+  main {
+    padding: 20px 5%;
+  }
+
+  /* Store Section */
+  .store-section {
+    padding: 20px;
+    width: 100%;
+  }
+
+  #product-container {
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* Adjust product grid for small screens */
+  }
+
+  /* Cart Section */
+  .cart-section {
+    width: 90%;
+    margin: 10px auto;
+  }
+
+  /* Footer */
+  .footer {
+    padding: 20px 10%;
+  }
+}
+
+/* For very small screens, like phones in portrait mode (max-width: 480px) */
+@media screen and (max-width: 480px) {
+  .hero {
+    padding: 30px 10px;
+  }
+
+  .spinner {
+    width: 70px;
+    height: 70px;
+  }
+
+  /* Footer */
+  .footer {
+    padding: 10px 5%;
+  }
+
+  /* Adjust product cards for small screens */
+  .product-card {
+    width: 100%;
+    margin: 10px 0;
+  }
+}
+
+/* Mobile Hamburger Menu */
+.hamburger {
+  display: none;
+  cursor: pointer;
+}
+
+.hamburger div {
+  width: 25px;
+  height: 3px;
+  background-color: #333;
+  margin: 5px 0;
+}
+
+.nav-links {
+  display: flex;
+  gap: 20px;
+}
+
+@media screen and (max-width: 768px) {
+  .hamburger {
+    display: block;
+  }
+
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    text-align: center;
+    gap: 10px;
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+}
+
+/* JavaScript for Toggle Hamburger Menu */
+const hamburger = document.querySelector('.hamburger');
+const navLinks = document.querySelector('.nav-links');
+
+hamburger.addEventListener('click', () => {
+  navLinks.classList.toggle('active');
+});
