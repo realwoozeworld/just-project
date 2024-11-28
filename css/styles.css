@@ -853,10 +853,56 @@ button#apply-coupon:hover {
   }
 }
 
-/* JavaScript for Toggle Hamburger Menu */
-const hamburger = document.querySelector('.hamburger');
-const navLinks = document.querySelector('.nav-links');
+/* Individual Links */
+.nav-links a {
+  text-decoration: none;
+  color: #333;
+  font-weight: bold;
+  position: relative;
+  transition: color 0.3s;
+}
 
-hamburger.addEventListener('click', () => {
-  navLinks.classList.toggle('active');
-});
+.nav-links a:hover {
+  color: #007bff;
+}
+
+/* Hamburger Menu */
+.hamburger {
+  display: none;
+  cursor: pointer;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.hamburger div {
+  width: 25px;
+  height: 3px;
+  background-color: #333;
+}
+
+/* Responsive Styles for Small Screens */
+@media screen and (max-width: 768px) {
+  /* Hide Navigation Links by Default */
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    background-color: white;
+    position: absolute;
+    top: 70px; /* Adjust based on header height */
+    left: 0;
+    padding: 20px;
+    gap: 15px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+
+  /* Show Hamburger Menu on Mobile */
+  .hamburger {
+    display: flex;
+  }
+
+  /* Show Navigation Links when Active */
+  .nav-links.active {
+    display: flex;
+  }
+}
