@@ -100,3 +100,12 @@ document.addEventListener("DOMContentLoaded", () => {
   const initialPage = activeLink ? activeLink.getAttribute("href") : "index.html";
   loadPageContent(initialPage);
 });
+
+// JavaScript to toggle the navigation menu
+const hamburger = document.getElementById('hamburger');
+const navLinks = document.getElementById('nav-links');
+
+// Toggle 'active' class when the hamburger icon is clicked
+hamburger.addEventListener('click', () => {
+  navLinks.classList.toggle('active');
+});
