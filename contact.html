@@ -18,7 +18,14 @@
         <li><a href="store.html">Store</a></li>
         <li><a href="cart.html">Cart</a></li>
         <li><a href="contact.html" class="active">Contact</a></li>
+        <li><button class="search-trigger" onclick="toggleSearchBar()">Search</button></li>
       </ul>
+      <div class="search-bar" id="searchBar" style="display: none;">
+        <form onsubmit="handleSearch(event)">
+          <input type="text" id="search" placeholder="Search products..." />
+          <button type="submit">Search</button>
+        </form>
+      </div>
     </nav>
   </header>
 

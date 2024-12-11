@@ -109,3 +109,32 @@ const navLinks = document.getElementById('nav-links');
 hamburger.addEventListener('click', () => {
   navLinks.classList.toggle('active');
 });
+
+// Store Filter 
+document.getElementById('filter-form').addEventListener('submit', (event) => {
+  event.preventDefault();
+
+  // Get filter values
+  const category = document.getElementById('category').value;
+  const minPrice = document.getElementById('min-price').value;
+  const maxPrice = document.getElementById('max-price').value;
+  const ratings = document.getElementById('ratings').value;
+
+  // Apply filters (update products dynamically)
+  const products = document.querySelectorAll('.product-card');
+  products.forEach((product) => {
+      const productCategory = product.dataset.category;
+      const productPrice = parseFloat(product.dataset.price);
+      const productRatings = parseInt(product.dataset.ratings);
+
+      let isVisible = true;
+
+      if (category && productCategory !== category) isVisible = false;
+      if (minPrice && productPrice < minPrice) isVisible = false;
+      if (maxPrice && productPrice > maxPrice) isVisible = false;
+      if (ratings && productRatings < ratings) isVisible = false;
+
+      product.style.display = isVisible ? 'block' : 'none';
+  });
+});
+

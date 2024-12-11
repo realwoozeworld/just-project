@@ -19,20 +19,68 @@
         <li><a href="store.html" class="active" aria-current="page">Store</a></li>
         <li><a href="cart.html">Cart</a></li>
         <li><a href="contact.html">Contact</a></li>
+        <li><button class="search-trigger" onclick="toggleSearchBar()">Search</button></li>
       </ul>
+      <div class="search-bar" id="searchBar" style="display: none;">
+        <form onsubmit="handleSearch(event)">
+          <input type="text" id="search" placeholder="Search products..." />
+          <button type="submit">Search</button>
+        </form>
+      </div>
     </nav>
   </header>
 
   <!-- Main Content -->
   <main>
-    <section class="store-section">
-      <h1>Our Products</h1>
-      <div id="product-container">
-        <!-- Products will be dynamically inserted here -->
-        <p>Loading products, please wait...</p>
-      </div>
+    <section class="store-wrapper">
+      <!-- Filters Section -->
+      <aside class="filter-section">
+        <h3>Filters</h3>
+        <form id="filter-form">
+          <!-- Category Filter -->
+          <div class="filter-group">
+            <label for="category">Category:</label>
+            <select id="category" name="category">
+              <option value="">All Categories</option>
+              <option value="electronics">Electronics</option>
+              <option value="fashion">Fashion</option>
+              <option value="home">Home & Living</option>
+            </select>
+          </div>
+  
+          <!-- Price Range Filter -->
+          <div class="filter-group">
+            <label for="price-range">Price Range:</label>
+            <input type="number" id="min-price" name="min-price" placeholder="Min Price">
+            <input type="number" id="max-price" name="max-price" placeholder="Max Price">
+          </div>
+  
+          <!-- Ratings Filter -->
+          <div class="filter-group">
+            <label for="ratings">Ratings:</label>
+            <select id="ratings" name="ratings">
+              <option value="">All Ratings</option>
+              <option value="4">4 stars & up</option>
+              <option value="3">3 stars & up</option>
+              <option value="2">2 stars & up</option>
+            </select>
+          </div>
+  
+          <button type="submit" class="filter-btn">Apply Filters</button>
+        </form>
+      </aside>
+  
+      <!-- Store Section -->
+      <section class="store-section">
+        <h1>Our Products</h1>
+        <div id="product-container">
+          <!-- Products will be dynamically inserted here -->
+          <p>Loading products, please wait...</p>
+        </div>
+      </section>
     </section>
   </main>
+  
 
   <!-- Footer -->
   <footer class="footer">

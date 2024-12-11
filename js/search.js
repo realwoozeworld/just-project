@@ -1,19 +1,27 @@
-document.addEventListener("DOMContentLoaded", () => {
-    const navLinks = document.querySelectorAll(".nav-links a");
+function handleSearch(event) {
+    event.preventDefault(); // Prevent form submission
+    const query = document.getElementById("search-input").value.trim().toLowerCase(); // Get the search term
 
-    // Handle navigation links
-    navLinks.forEach((link) => {
-        link.addEventListener("click", (event) => {
-            const target = link.getAttribute("href");
-            if (target && target.endsWith(".html")) {
-                // Force a full page reload
-                window.location.href = target;
-            }
-        });
-    });
+    // Check if the query is empty
+    if (!query) {
+        alert("Please enter a search term.");
+        return;
+    }
 
-    console.log("Page initialized successfully.");
-});
+    // Navigate to store page with the search query in the URL
+    window.location.href = `store.html?search=${encodeURIComponent(query)}`;
+}
+
+function toggleSearchBar() {
+    var searchBar = document.getElementById('searchBar');
+    
+    // If the search bar is currently hidden, show it
+    if (searchBar.style.display === 'none' || searchBar.style.display === '') {
+        searchBar.style.display = 'flex';
+    } else {
+        searchBar.style.display = 'none';
+    }
+}
 // Function to handle search form submission
 function handleSearch(event) {
     event.preventDefault();  // Prevent the form from refreshing the page
