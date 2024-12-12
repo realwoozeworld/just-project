@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Profile</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <script defer src="js/auth.js"></script>
+</head>
+<body id="profilePage">
+  <!-- Header -->
+  <header class="header">
+    <nav class="navbar">
+      <div class="logo"><a href="index.html">SafeHouse</a></div>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="store.html">Store</a></li>
+        <li><a href="cart.html">Cart</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><button class="search-trigger" onclick="toggleSearchBar()">Search</button></li>
+        <li><button id="logoutButton">Logout</button></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Profile Section -->
+  <main>
+    <section class="profile">
+      <h1>Welcome, <span id="welcomeMessage">User</span>!</h1>
+      <div class="profile-details">
+        <p><strong>Username:</strong> <span id="profileUsername"></span></p>
+        <p><strong>Email:</strong> <span id="profileEmail"></span></p>
+      </div>
+      <button onclick="editProfile()">Edit Profile</button>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <p>© 2024 SafeHouse. All Rights Reserved.</p>
+  </footer>
+
+  <!-- Optional Script for Profile -->
+  <script>
+    function editProfile() {
+      alert("Edit profile functionality coming soon!");
+    }
+  </script>
+</body>
+</html>

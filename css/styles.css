@@ -726,24 +726,6 @@ button#apply-coupon:hover {
   margin-top: 15px;
 }
 
-/* Button Styles for Return */
-.btn-return {
-  display: inline-block;
-  background-color: #007bff;
-  color: white;
-  padding: 12px 25px;
-  font-size: 1.2rem;
-  border-radius: 5px;
-  text-decoration: none;
-  text-align: center;
-  margin-top: 30px;
-  transition: background-color 0.3s;
-}
-
-.btn-return:hover {
-  background-color: #0056b3;
-}
-
 /* Make layout responsive */
 @media screen and (max-width: 768px) {
   /* Header */
@@ -974,52 +956,34 @@ button#apply-coupon:hover {
     max-width: 100%; /* Full-width on small screens */
   }
 }
-/* Fixed Search Bar */
-.search-bar {
-  position: fixed;
-  top: 10px;
-  left: 50%;
-  transform: translateX(-50%);
-  background-color: white;
-  padding: 10px 20px;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-  border-radius: 50px;
-  width: 80%;
-  max-width: 600px;
-  z-index: 100;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  transition: background-color 0.3s;
-}
-
-.search-bar input {
-  width: 80%;
-  padding: 10px;
-  border: 1px solid #ddd;
-  border-radius: 30px;
-  font-size: 1rem;
-  outline: none;
-  transition: width 0.3s;
-}
-
-.search-bar input:focus {
-  width: 90%;
-}
-
-.search-bar button {
-  padding: 10px 15px;
-  background-color: #007bff;
-  color: white;
-  border: none;
-  border-radius: 30px;
+/* Search Button */
+.search-button {
+  padding: 0.5em 1em;
+  background-color: #f5f5f5; /* Light gray */
+  color: #333; /* Dark gray text */
+  font-size: 1em;
+  border: 1px solid #ccc; /* Subtle border */
+  border-radius: 4px; /* Slightly rounded edges */
   cursor: pointer;
-  transition: background-color 0.3s;
+  transition: background-color 0.2s ease, box-shadow 0.2s ease;
 }
 
-.search-bar button:hover {
-  background-color: #0056b3;
+.search-button:hover {
+  background-color: #eaeaea; /* Slightly darker gray on hover */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Minimal shadow */
 }
+
+.search-button:active {
+  background-color: #dcdcdc; /* Darker gray when clicked */
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1); /* Inner shadow for press effect */
+}
+
+.search-button:focus {
+  outline: none; /* Removes the focus outline */
+  box-shadow: 0 0 0 3px rgba(60, 120, 255, 0.5); /* Subtle blue glow on focus */
+}
+
+
 
 /* Responsive for smaller screens */
 @media (max-width: 768px) {
@@ -1105,4 +1069,74 @@ button#apply-coupon:hover {
   .search-bar input {
     width: 70%;
   }
+}
+
+/* Profile Section */
+.profile {
+  margin: 2em auto;
+  padding: 2em;
+  max-width: 600px;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.profile h1 {
+  margin-bottom: 1em;
+  color: #333;
+}
+
+.profile .profile-details {
+  margin: 1em 0;
+  text-align: left;
+}
+
+.profile .profile-details p {
+  font-size: 1.1em;
+  margin: 0.5em 0;
+}
+
+.profile button {
+  background-color: #007BFF;
+  color: white;
+  border: none;
+  padding: 0.7em 1.5em;
+  cursor: pointer;
+  border-radius: 4px;
+  font-size: 1em;
+}
+
+.profile button:hover {
+  background-color: #0056b3;
+}
+
+/* Footer Styles */
+.footer {
+  background-color: #333;
+  color: white;
+  text-align: center;
+  padding: 1em 0;
+  margin-top: 2em;
+}
+/* Logout Button */
+.logout-button {
+  padding: 0.5em 1.2em;
+  background-color: #f5f5f5; /* Light gray */
+  color: #333; /* Dark gray text */
+  font-size: 1em;
+  border: 1px solid #ccc; /* Subtle border */
+  border-radius: 4px; /* Slightly rounded edges */
+  cursor: pointer;
+  transition: background-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.logout-button:hover {
+  background-color: #eaeaea; /* Slightly darker gray on hover */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Minimal shadow */
+}
+
+.logout-button:active {
+  background-color: #dcdcdc; /* Darker gray when clicked */
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1); /* Inner shadow for press effect */
 }
