@@ -40,3 +40,41 @@ function handleSearch(event) {
     }
   }
   
+  function handleSearch(event) {
+    event.preventDefault(); // Prevent form submission
+    const query = document.getElementById("search-input").value.trim().toLowerCase(); // Get the search term
+
+    // Check if the query is empty
+    if (!query) {
+        alert("Please enter a search term.");
+        return;
+    }
+
+    // Navigate to store page with the search query in the URL
+    window.location.href = `store.html?search=${encodeURIComponent(query)}`;
+}
+
+function toggleSearchBar() {
+  const searchBar = document.getElementById('searchBar');
+  if (searchBar.style.display === 'none' || searchBar.style.display === '') {
+    searchBar.style.display = 'flex';
+  } else {
+    searchBar.style.display = 'none';
+  }
+}
+
+function handleSearch(event) {
+  event.preventDefault();
+  const query = document.getElementById('search').value.trim().toLowerCase();
+  
+  if (!query) {
+    alert('Please enter a search term.');
+    return;
+  }
+  
+  // Redirect to store page with search query as a parameter
+  window.location.href = `store.html?search=${encodeURIComponent(query)}`;
+}
+
+// Attach event listener for the Search button
+document.querySelector('.search-bar button[type="submit"]').addEventListener('click', handleSearch);

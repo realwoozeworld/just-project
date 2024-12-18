@@ -3,17 +3,16 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Home</title>
+  <title>SafeHouse</title>
   <link rel="stylesheet" href="css/styles.css">
-  <script defer src="js/common.js"></script> <!-- Your external JavaScript for the search bar -->
-  <script defer src="js/script.js"></script>
+  <script defer src="js/common.js"></script>
+  <script defer src="js/auth.js"></script>
 </head>
 <body>
   <!-- Header -->
   <header class="header">
     <nav class="navbar">
       <div class="logo"><a href="index.html">SafeHouse</a></div>
-      <!-- Hamburger Icon -->
       <div class="hamburger" id="hamburger">
         <div></div>
         <div></div>
@@ -25,15 +24,12 @@
         <li><a href="cart.html" data-page="cart">Cart</a></li>
         <li><a href="contact.html" data-page="contact">Contact</a></li>
         <li><button class="search-trigger" onclick="toggleSearchBar()">Search</button></li>
-        <li><button id="logoutButton">Logout</button></li>
+        <li><button id="loginButton">Login</button></li>
+        <li><button id="logoutButton" style="display: none;">Logout</button></li>
       </ul>
-      
-      <!-- Search Bar -->
-      <div class="search-bar" id="searchBar" style="display: none;">
-        <form onsubmit="handleSearch(event)">
-          <input type="text" id="search" placeholder="Search products..." />
-          <button type="submit">Search</button>
-        </form>
+      <div class="search-bar" id="searchBar">
+        <input type="text" id="search" placeholder="Search products..." />
+        <button type="submit">Search</button>
       </div>
     </nav>
   </header>
@@ -71,7 +67,7 @@
         <button onclick="window.location.href='store.html'">Shop Now</button>
       </div>
       <div class="product-card">
-        <img src="https://th.bing.com/th/id/R.a8a033f3c8baa4426a635e45060a7765?rik=AHW5ADslJShGxw&pid=ImgRaw&r=0" alt="Product 3">
+        <img src="https://th.bing.com/th/id/R.a8a033f3c8baa4426a635e45060a7765?rik=AHW5ADslJShGxw&pid=ImgRaw&r=0" alt="Product 4">
         <h3>Doorbell</h3>
         <p>$29.99</p>
         <button onclick="window.location.href='store.html'">Shop Now</button>

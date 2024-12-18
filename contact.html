@@ -13,19 +13,23 @@
   <header class="header">
     <nav class="navbar">
       <div class="logo"><a href="index.html">SafeHouse</a></div>
+      <div class="hamburger" id="hamburger">
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
       <ul class="nav-links">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="store.html">Store</a></li>
-        <li><a href="cart.html">Cart</a></li>
-        <li><a href="contact.html" class="active">Contact</a></li>
+        <li><a href="index.html" data-page="home">Home</a></li>
+        <li><a href="store.html" data-page="store">Store</a></li>
+        <li><a href="cart.html" data-page="cart">Cart</a></li>
+        <li><a href="contact.html" data-page="contact" aria-current="page" class="active">Contact</a></li>
         <li><button class="search-trigger" onclick="toggleSearchBar()">Search</button></li>
-        <li><button id="logoutButton">Logout</button></li>  
+        <li><button id="loginButton">Login</button></li>
+        <li><button id="logoutButton" style="display: none;">Logout</button></li>
       </ul>
-      <div class="search-bar" id="searchBar" style="display: none;">
-        <form onsubmit="handleSearch(event)">
-          <input type="text" id="search" placeholder="Search products..." />
-          <button type="submit">Search</button>
-        </form>
+      <div class="search-bar" id="searchBar">
+        <input type="text" id="search" placeholder="Search products..." />
+        <button type="submit">Search</button>
       </div>
     </nav>
   </header>

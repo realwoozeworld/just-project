@@ -8,24 +8,30 @@
   <script defer src="js/common.js"></script>
   <script defer src="js/store.js"></script>
   <script defer src="js/script.js"></script>
+  <script defer src="js/search.js"></script>
 </head>
 <body>
   <!-- Header -->
   <header class="header">
     <nav class="navbar">
       <div class="logo"><a href="index.html">SafeHouse</a></div>
+      <div class="hamburger" id="hamburger">
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
       <ul class="nav-links">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="store.html" class="active" aria-current="page">Store</a></li>
-        <li><a href="cart.html">Cart</a></li>
-        <li><a href="contact.html">Contact</a></li>
+        <li><a href="index.html" data-page="home">Home</a></li>
+        <li><a href="store.html" data-page="store" aria-current="page" class="active">Store</a></li>
+        <li><a href="cart.html" data-page="cart">Cart</a></li>
+        <li><a href="contact.html" data-page="contact">Contact</a></li>
         <li><button class="search-trigger" onclick="toggleSearchBar()">Search</button></li>
+        <li><button id="loginButton">Login</button></li>
+        <li><button id="logoutButton" style="display: none;">Logout</button></li>
       </ul>
-      <div class="search-bar" id="searchBar" style="display: none;">
-        <form onsubmit="handleSearch(event)">
-          <input type="text" id="search" placeholder="Search products..." />
-          <button type="submit">Search</button>
-        </form>
+      <div class="search-bar" id="searchBar">
+        <input type="text" id="search" placeholder="Search products..." />
+        <button type="submit">Search</button>
       </div>
     </nav>
   </header>
