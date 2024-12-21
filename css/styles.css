@@ -1128,7 +1128,6 @@ button#apply-coupon:hover {
   border: 1px solid #ccc; /* Subtle border */
   border-radius: 4px; /* Slightly rounded edges */
   cursor: pointer;
-  transition: background-color 0.2s ease, box-shadow 0.2s ease;
 }
 
 .logout-button:hover {
