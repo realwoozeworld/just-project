@@ -78,3 +78,32 @@ function handleSearch(event) {
 
 // Attach event listener for the Search button
 document.querySelector('.search-bar button[type="submit"]').addEventListener('click', handleSearch);
+
+document.addEventListener('DOMContentLoaded', function () {
+  const userNickname = document.getElementById('userNickname');
+  const dropdownMenu = document.getElementById('dropdownMenu');
+  const logoutLink = document.getElementById('logoutLink');
+  
+  // Simulate fetching the user's nickname
+  const nickname = localStorage.getItem('nickname') || 'Guest'; 
+  userNickname.textContent = nickname;
+
+  // Toggle dropdown visibility
+  window.toggleDropdown = function () {
+    dropdownMenu.style.display = dropdownMenu.style.display === 'block' ? 'none' : 'block';
+  };
+
+  // Logout functionality
+  logoutLink.addEventListener('click', function () {
+    localStorage.removeItem('authToken');
+    localStorage.removeItem('nickname');
+    window.location.href = 'login.html';
+  });
+
+  // Close dropdown when clicking outside
+  document.addEventListener('click', function (event) {
+    if (!document.getElementById('userMenu').contains(event.target)) {
+      dropdownMenu.style.display = 'none';
+    }
+  });
+});

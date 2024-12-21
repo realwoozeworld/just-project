@@ -177,7 +177,7 @@ main {
 
 h1 {
   font-size: 2.5rem;
-  color: #333;
+  color: #ffffff;
   margin-bottom: 20px;
   text-align: center;
 }
@@ -389,150 +389,155 @@ p {
 
 /* Contact Section */
 .contact-section {
-  max-width: 800px;
-  margin: 0 auto;
-  padding: 20px;
-  width: 90%; /* Adjust width to be less wide */
-  max-width: 400px; /* Set a smaller maximum width */
+  width: 90%; 
+  max-width: 1200px; 
   margin: 20px auto;
-  background: #fff;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-  border-radius: 6px;
+  padding: 20px 30px;
+  background: linear-gradient(135deg, #ffffff, #f9f9f9);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 30px;
+  overflow: hidden;
 }
 
 /* Contact Container for Layout */
 .contact-container {
   display: flex;
-  flex-wrap: wrap;
-  gap: 20px; /* Spacing between the form and map */
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 30px;
 }
 
 /* Contact Form Styling */
 .contact-form {
-  flex: 1;
-  min-width: 300px; /* Minimum width for the form */
-  background-color: #f9f9f9;
-  border-radius: 6px;
-  padding: 20px;
+  flex: 2;
+  background-color: #ffffff;
+  border-radius: 10px;
+  padding: 25px 20px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.3s ease-in-out;
 }
 
-/* Section Heading */
-.contact-section h2 {
-  font-size: 1.5rem;
-  text-align: center;
-  margin-bottom: 15px;
-  color: #007bff;
-  margin-bottom: 10px;
+.contact-form:hover {
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
 }
 
-.contact-section p {
-  text-align: center;
-  font-size: 0.9rem;
-  margin-bottom: 20px;
-  color: #555;
-}
-
-/* Form Styles */
-form {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
-
-.form-group {
-  display: flex;
-  flex-direction: column;
-  gap: 5px;
-}
-
+/* Form Group */
 .form-group label {
-  font-weight: bold;
-  font-size: 0.9rem;
-  color: #333;
-  margin-bottom: 5px;
-  display: block;
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: #444;
 }
 
 .form-group input,
 .form-group textarea {
-  padding: 8px;
-  width: 90%;
-  font-size: 0.9rem;
-  border: 1px solid #ccc;
-  border-radius: 5px;
+  padding: 10px;
+  width: 100%;
+  font-size: 1rem;
+  border: 1px solid #ddd;
+  border-radius: 6px;
   outline: none;
-  transition: border-color 0.3s;
+  transition: border-color 0.3s, box-shadow 0.3s;
 }
 
 .form-group input:focus,
 .form-group textarea:focus {
   border-color: #007bff;
-  box-shadow: 0 0 5px rgba(0, 123, 255, 0.3);
-}
-
-/* Textarea */
-textarea {
-  resize: vertical;
+  box-shadow: 0 0 8px rgba(0, 123, 255, 0.3);
 }
 
 /* Submit Button */
 form button {
-  padding: 8px 15px;
-  width: 30%;
-  font-size: 0.9rem;
-  color: #fff;
+  padding: 10px 20px;
+  font-size: 1rem;
+  color: #ffffff;
   background: #007bff;
   border: none;
-  border-radius: 5px;
+  border-radius: 6px;
   cursor: pointer;
-  transition: background 0.3s;
+  transition: background 0.3s, transform 0.2s;
 }
 
 form button:hover {
   background: #0056b3;
-}
-
-/* Form Response */
-#form-response {
-  text-align: center;
-  font-size: 0.9rem;
-  margin-top: 15px;
-  color: #28a745;
+  transform: translateY(-2px);
 }
 
 /* Map Styling */
 .contact-map {
   flex: 1;
-  min-width: 300px;
-  height: 300px;
-  display: flex;
-  justify-content: flex;
-  align-items: flex;
-  background: #f9f9f9;
-  border-radius: 6px;
+  background-color: #ffffff;
+  border-radius: 10px;
   overflow: hidden;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  height: 450px;
+  transition: transform 0.3s ease-in-out;
+}
+
+.contact-map:hover {
+  transform: scale(1.02);
+}
+
+.contact-map iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+/* Section Heading */
+.contact-section h2 {
+  font-size: 1.8rem;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 15px;
+  color: #007bff;
+}
+
+.contact-section p {
+  text-align: center;
+  font-size: 1rem;
+  color: #666;
+  margin-bottom: 20px;
 }
 
 /* Responsive Design */
 @media (max-width: 768px) {
   .contact-container {
-    flex-direction: column; /* Stacks items on small screens */
+    flex-direction: column;
   }
 
   .contact-form,
   .contact-map {
-    width: 100%; /* Makes both form and map 100% width on small screens */
-    min-width: 100%;
+    width: 100%;
+    flex: none;
   }
 
   .contact-section {
-    width: 95%; /* Make it smaller for small screens */
+    padding: 15px;
   }
 }
+
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .contact-container {
+    flex-direction: column; /* Stacks items vertically */
+  }
+
+  .contact-form,
+  .contact-map {
+    width: 100%; /* Full width on small screens */
+    flex: none; /* Reset flex behavior */
+  }
+
+  .contact-section {
+    width: 95%;
+  }
+}
+
 
 /* Progress Bar */
 .progress-bar {
@@ -1000,7 +1005,7 @@ button#apply-coupon:hover {
 .search-bar {
   position: fixed;
   top: 7px;
-  left: 50%;
+  left: 45%;
   transform: translateX(-50%);
   background-color: white;
   padding: 10px 20px;
@@ -1119,23 +1124,55 @@ button#apply-coupon:hover {
   padding: 1em 0;
   margin-top: 2em;
 }
-/* Logout Button */
-.logout-button {
-  padding: 0.5em 1.2em;
-  background-color: #f5f5f5; /* Light gray */
-  color: #333; /* Dark gray text */
-  font-size: 1em;
-  border: 1px solid #ccc; /* Subtle border */
-  border-radius: 4px; /* Slightly rounded edges */
+
+#loginButton, #logoutButton {
+  padding: 8px 16px;
+  background-color: #007BFF;
+  color: white;
+  border: none;
+  border-radius: 4px;
   cursor: pointer;
 }
 
-.logout-button:hover {
-  background-color: #eaeaea; /* Slightly darker gray on hover */
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Minimal shadow */
+#loginButton:hover, #logoutButton:hover {
+  background-color: #0056b3;
 }
 
-.logout-button:active {
-  background-color: #dcdcdc; /* Darker gray when clicked */
-  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1); /* Inner shadow for press effect */
+/*User Menu*/
+
+#userMenu {
+  position: relative;
+  display: inline-block;
+}
+
+#userNickname {
+  cursor: pointer;
+  color: #007BFF;
+  font-weight: bold;
+}
+
+#dropdownMenu {
+  display: none;
+  position: absolute;
+  right: 0;
+  background-color: white;
+  border: 1px solid #ddd;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 4px;
+  z-index: 1000;
+}
+
+#dropdownMenu a {
+  display: block;
+  padding: 8px 16px;
+  color: #333;
+  text-decoration: none;
+}
+
+#dropdownMenu a:hover {
+  background-color: #f4f4f4;
+}
+
+#userMenu:hover #dropdownMenu {
+  display: block; /* Optional: Show on hover if you prefer */
 }

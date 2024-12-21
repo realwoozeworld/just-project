@@ -24,8 +24,14 @@
         <li><a href="cart.html" data-page="cart">Cart</a></li>
         <li><a href="contact.html" data-page="contact">Contact</a></li>
         <li><button class="search-trigger" onclick="toggleSearchBar()">Search</button></li>
-        <li><button id="loginButton">Login</button></li>
-        <li><button id="logoutButton" style="display: none;">Logout</button></li>
+        <li id="userMenu">
+          <span id="userNickname" onclick="toggleDropdown()">Nickname</span>
+          <div class="dropdown-menu" id="dropdownMenu">
+            <a href="profile.html">Profile</a>
+            <a href="settings.html">Settings</a>
+            <a href="#" id="logoutLink">Logout</a>
+          </div>
+        </li>
       </ul>
       <div class="search-bar" id="searchBar">
         <input type="text" id="search" placeholder="Search products..." />
@@ -36,7 +42,7 @@
 
   <!-- Hero Section -->
   <section class="hero">
-    <div class="hero-overlay"></div>
+    <div class="hero-overlay"><img src="https://wallpaperaccess.com/full/3644286.jpg"></div>
     <div class="hero-text">
       <h1>Welcome to Our World</h1>
       <p>Discover amazing products, unmatched quality, and unbeatable prices.</p>

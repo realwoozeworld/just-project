@@ -24,8 +24,14 @@
         <li><a href="cart.html" data-page="cart">Cart</a></li>
         <li><a href="contact.html" data-page="contact" aria-current="page" class="active">Contact</a></li>
         <li><button class="search-trigger" onclick="toggleSearchBar()">Search</button></li>
-        <li><button id="loginButton">Login</button></li>
-        <li><button id="logoutButton" style="display: none;">Logout</button></li>
+        <li id="userMenu">
+          <span id="userNickname" onclick="toggleDropdown()">Nickname</span>
+          <div class="dropdown-menu" id="dropdownMenu">
+            <a href="profile.html">Profile</a>
+            <a href="settings.html">Settings</a>
+            <a href="#" id="logoutLink">Logout</a>
+          </div>
+        </li>
       </ul>
       <div class="search-bar" id="searchBar">
         <input type="text" id="search" placeholder="Search products..." />
@@ -39,6 +45,9 @@
     <section class="contact-section">
       <h1>Contact Us</h1>
       <p>Have a question or just want to say hello? We'd love to hear from you!</p>
+      <div class="contact-container"></div>
+      <!-- Contact Form -->
+      <div class="contact-form">
       <form id="contact-form">
         <div class="form-group">
           <label for="name">Name:</label>
@@ -62,13 +71,12 @@
       
       <!-- Map -->
       <div class="contact-map">
-        <iframe
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d29313.330067905197!2d44.7405822!3d41.7234944!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40447311c5a4fd2d%3A0xb51a5da2ec2d9d2a!2z4YOh4YOY4YOX4YOYIOGDm-GDneGDmuGDmA!5e1!3m2!1sen!2sge!4v1732277459456!5m2!1sen!2sge"
-          width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
-          aria-label="Google Map of location"></iframe>
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d29313.330067905197!2d44.7405822!3d41.7234944!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40447311c5a4fd2d%3A0xb51a5da2ec2d9d2a!2z4YOh4YOY4YOX4YOYIOGDm-GDneGDmuGDmA!5e1!3m2!1sen!2sge!4v1732277459456!5m2!1sen!2sge"></iframe>
       </div>
-    </section>
-  </main>
+    </div>
+   </div> 
+  </section>
+</main>
 
   <!-- Footer -->
   <footer class="footer">

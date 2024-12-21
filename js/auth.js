@@ -61,3 +61,31 @@ window.onload = function () {
     }
   };
   
+  document.getElementById('logoutButton').addEventListener('click', function () {
+    // Clear user data from local storage or session storage
+    localStorage.removeItem('authToken');
+    sessionStorage.removeItem('authToken');
+  
+    // Optionally clear other user data if stored
+    localStorage.removeItem('userDetails');
+    sessionStorage.removeItem('userDetails');
+  
+    // Redirect to the login page
+    window.location.href = 'login.html';
+  });
+  
+  // Hide logout button and show login button if user is not authenticated
+  document.addEventListener('DOMContentLoaded', function () {
+    const authToken = localStorage.getItem('authToken') || sessionStorage.getItem('authToken');
+    const loginButton = document.getElementById('loginButton');
+    const logoutButton = document.getElementById('logoutButton');
+  
+    if (authToken) {
+      loginButton.style.display = 'none';
+      logoutButton.style.display = 'block';
+    } else {
+      loginButton.style.display = 'block';
+      logoutButton.style.display = 'none';
+    }
+  });
+  
