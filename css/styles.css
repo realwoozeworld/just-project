@@ -7,8 +7,8 @@
 
 /* Body */
 body {
-  font-family: 'Poppins', sans-serif;
-  line-height: 1.6;
+  font-family: 'Arial', sans-serif;
+  line-height: 1.5;
   background-color: #f4f4f9;
   color: #333;
   overflow-x: hidden;
@@ -21,12 +21,46 @@ body {
 /* Header and Navigation */
 .header {
   position: fixed;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 20px;
   top: 0;
   width: 100%;
   background: rgba(255, 255, 255, 0.9);
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   z-index: 100;
   height: 70px; /* Set a consistent height for the header */
+  color: white;
+}
+
+.header nav ul {
+  display: flex;
+  list-style: none;
+  gap: 15px;
+}
+
+.header nav ul li {
+  font-size: 0.9rem;
+}
+
+/* Responsive Layout */
+
+.contact-section {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.contact-form,
+.contact-map {
+  flex: 1;
+  min-width: 300px;
+}
+
+.contact-map iframe {
+  width: 100%;
+  height: 300px;
+  border: 0;
 }
 
 .navbar {
@@ -43,6 +77,11 @@ body {
   color: #007bff;
   text-transform: uppercase;
   letter-spacing: 2px;
+}
+
+.logo img {
+  max-width: 150px;
+  height: auto;
 }
 
 .nav-links {
@@ -881,6 +920,9 @@ button#apply-coupon:hover {
     padding: 20px;
     gap: 15px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
+    transform: translateY(-20px);
+    opacity: 0;
   }
 
   /* Show Hamburger Menu on Mobile */
@@ -891,7 +933,25 @@ button#apply-coupon:hover {
   /* Show Navigation Links when Active */
   .nav-links.active {
     display: flex;
+    transform: translateY(0);
+    opacity: 1;
   }
+}
+
+.hamburger div {
+  transition: transform 0.3s ease;
+}
+
+.hamburger.active div:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+
+.hamburger.active div:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger.active div:nth-child(3) {
+  transform: rotate(-45deg) translate(5px, -5px);
 }
 
 /* Store Filter */
