@@ -1,55 +1,220 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Profile</title>
-  <link rel="stylesheet" href="css/styles.css">
-  <script defer src="js/auth.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Profile - SafeHouse Command Center</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <style>
+        .profile-layout-container {
+            max-width: 650px !important;
+            margin: 4rem auto !important;
+            padding: 0 1.5rem !important;
+            box-sizing: border-box !important;
+            width: 100% !important;
+        }
+
+        .premium-profile-card {
+            background: #FFFFFF !important;
+            border: 1px solid #EAECE8 !important;
+            border-radius: 24px !important;
+            padding: 3.5rem 3rem !important;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.015) !important;
+            display: flex !important;
+            flex-direction: column !important;
+            gap: 2rem !important;
+            box-sizing: border-box !important;
+            width: 100% !important;
+            position: relative;
+        }
+
+        /* მომხმარებლის ავატარის დიზაინი */
+        .profile-avatar-section {
+            display: flex !important;
+            align-items: center !important;
+            gap: 1.5rem !important;
+            margin-bottom: 1rem !important;
+            border-bottom: 1px solid #F5F5F7 !important;
+            padding-bottom: 2rem !important;
+        }
+
+        .avatar-circle {
+            width: 75px !important;
+            height: 75px !important;
+            background: linear-gradient(135deg, #0071E3 0%, #002147 100%) !important;
+            color: #FFFFFF !important;
+            font-size: 1.8rem !important;
+            font-weight: 700 !important;
+            border-radius: 50% !important;
+            display: flex !important;
+            align-items: center !important;
+            justify-content: center !important;
+            letter-spacing: 1px;
+            box-shadow: 0 4px 14px rgba(0, 113, 227, 0.2) !important;
+        }
+
+        .avatar-info h2 {
+            font-size: 1.4rem !important;
+            font-weight: 700 !important;
+            color: #111111 !important;
+            margin: 0 0 0.25rem 0 !important;
+            letter-spacing: -0.3px;
+        }
+
+        .avatar-info p {
+            font-size: 0.85rem !important;
+            font-weight: 600 !important;
+            color: #0071E3 !important;
+            text-transform: uppercase !important;
+            letter-spacing: 1px !important;
+            margin: 0 !important;
+        }
+
+        /* მონაცემების ბლოკები */
+        .profile-data-group {
+            display: flex !important;
+            flex-direction: column !important;
+            gap: 0.5rem !important;
+            width: 100% !important;
+        }
+
+        .profile-data-group label {
+            font-size: 0.75rem !important;
+            font-weight: 700 !important;
+            text-transform: uppercase !important;
+            color: #86868B !important;
+            letter-spacing: 0.5px !important;
+        }
+
+        .profile-data-value {
+            font-size: 1.05rem !important;
+            font-weight: 500 !important;
+            color: #111111 !important;
+            background: #F5F5F7 !important;
+            padding: 0.9rem 1.2rem !important;
+            border-radius: 10px !important;
+            border: 1px solid #EAECE8 !important;
+            box-sizing: border-box !important;
+            width: 100% !important;
+        }
+
+        /* სისტემური სტატუსის ბლოკი */
+        .system-status-box {
+            display: flex !important;
+            justify-content: space-between !important;
+            align-items: center !important;
+            background: #F5F5F7 !important;
+            padding: 1rem 1.2rem !important;
+            border-radius: 10px !important;
+            border: 1px solid #EAECE8 !important;
+            margin-top: 0.5rem !important;
+        }
+
+        .status-indicator {
+            display: inline-flex !important;
+            align-items: center !important;
+            gap: 0.5rem !important;
+            font-size: 0.85rem !important;
+            font-weight: 700 !important;
+            color: #34C759 !important; /* Premium Apple Green */
+            text-transform: uppercase !important;
+        }
+
+        .status-dot {
+            width: 8px;
+            height: 8px;
+            background-color: #34C759;
+            border-radius: 50%;
+            display: inline-block;
+            box-shadow: 0 0 8px #34C759;
+        }
+
+        /* წითელი Logout ღილაკი */
+        .premium-logout-btn {
+            width: 100% !important;
+            background-color: #FF3B30 !important; /* Apple Premium Red */
+            color: #FFFFFF !important;
+            border: none !important;
+            padding: 1.1rem !important;
+            border-radius: 12px !important;
+            font-size: 0.95rem !important;
+            font-weight: 600 !important;
+            cursor: pointer !important;
+            font-family: 'Plus Jakarta Sans', sans-serif !important;
+            transition: all 0.2s ease !important;
+            margin-top: 1.5rem !important;
+            box-shadow: 0 4px 14px rgba(255, 59, 48, 0.15) !important;
+        }
+
+        .premium-logout-btn:hover {
+            background-color: #E02B20 !important;
+            transform: translateY(-1px) !important;
+            box-shadow: 0 6px 20px rgba(255, 59, 48, 0.25) !important;
+        }
+
+        @media (max-width: 600px) {
+            .premium-profile-card { padding: 2.5rem 1.5rem !important; }
+            .profile-avatar-section { flex-direction: column; text-align: center; gap: 1rem; }
+        }
+    </style>
 </head>
-<body id="profilePage">
-  <!-- Header -->
-  <header class="header">
-    <nav class="navbar">
-      <div class="logo"><a href="index.html">SafeHouse</a></div>
-      <div class="hamburger" onclick="toggleMenu()" id="hamburger">
-        <div></div>
-        <div></div>
-        <div></div>
-      </div>
-      <ul class="nav-links">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="store.html">Store</a></li>
-        <li><a href="cart.html">Cart</a></li>
-        <li><a href="contact.html">Contact</a></li>
-        <li><button class="search-trigger" onclick="toggleSearchBar()">Search</button></li>
-        <li><button id="logoutButton">Logout</button></li>
-      </ul>
-    </nav>
-  </header>
+<body>
 
-  <!-- Profile Section -->
-  <main>
-    <section class="profile">
-      <h1>Welcome, <span id="welcomeMessage">User</span>!</h1>
-      <div class="profile-details">
-        <p><strong>Username:</strong> <span id="profileUsername"></span></p>
-        <p><strong>Email:</strong> <span id="profileEmail"></span></p>
-      </div>
-      <button onclick="editProfile()">Edit Profile</button>
-    </section>
-  </main>
+    <header class="navbar">
+        <a href="index.html" class="logo">SafeHouse</a>
+        <nav class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="store.html">Store</a>
+            <a href="cart.html">Cart</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+        <form class="search-form" action="#" method="GET">
+            <input type="text" placeholder="Search...">
+            <button type="submit">Search</button>
+        </form>
+    </header>
 
-  <!-- Footer -->
-  <footer class="footer">
-    <p>© 2024 SafeHouse. All Rights Reserved.</p>
-  </footer>
+    <div class="profile-layout-container">
+        <h1 class="section-title" style="text-align: left; margin-bottom: 2.5rem;">Ecosystem Terminal</h1>
+        
+        <div class="premium-profile-card">
+            
+            <div class="profile-avatar-section">
+                <div class="avatar-circle">NK</div>
+                <div class="avatar-info">
+                    <h2 id="profile-name-header">Nodari Khutsishvili</h2>
+                    <p>Root Administrator</p>
+                </div>
+            </div>
 
-  <!-- Optional Script for Profile -->
-  <script>
-    function editProfile() {
-      alert("Edit profile functionality coming soon!");
-    }
-  </script>
+            <div class="profile-data-group">
+                <label>Network Node Email</label>
+                <div class="profile-data-value" id="profile-email-value">nodo@safehouse.ge</div>
+            </div>
+
+            <div class="profile-data-group">
+                <label>Clearance Parameters</label>
+                <div class="system-status-box">
+                    <span style="font-size: 0.95rem; font-weight: 500; color: #111111;">Security Node</span>
+                    <span class="status-indicator">
+                        <span class="status-dot"></span> Active Core Sync
+                    </span>
+                </div>
+            </div>
+
+            <button id="logoutBtn" class="premium-logout-btn">Terminate Secure Session (Clear Cache)</button>
+            
+        </div>
+    </div>
+
+    <footer class="app-footer" style="margin-top: 6rem;">
+        <p>© 2026 SafeHouse. All rights reserved. Future Engineering.</p>
+    </footer>
+
+    <script src="js/script.js"></script>
 </body>
 </html>

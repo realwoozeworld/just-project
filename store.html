@@ -1,102 +1,186 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Store Page</title>
-  <link rel="stylesheet" href="css/styles.css">
-  <script defer src="js/common.js"></script>
-  <script defer src="js/store.js"></script>
-  <script defer src="js/script.js"></script>
-  <script defer src="js/search.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SafeHouse Store - Smart Home Devices</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <style>
+        .store-layout-wrapper {
+            max-width: 1300px !important;
+            margin: 0 auto !important;
+            padding: 0 2rem 5rem 2rem !important;
+            box-sizing: border-box !important;
+        }
+
+        .store-grid {
+            display: grid !important;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)) !important;
+            gap: 2.5rem !important;
+            width: 100% !important;
+            box-sizing: border-box !important;
+        }
+
+        .premium-product-card {
+            background: #FFFFFF !important;
+            border: 1px solid #EAECE8 !important;
+            border-radius: 20px !important;
+            padding: 2.2rem !important;
+            display: flex !important;
+            flex-direction: column !important;
+            gap: 1.25rem !important;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.01) !important;
+            transition: all 0.3s cubic-bezier(0.25, 1, 0.5, 1) !important;
+            box-sizing: border-box !important;
+            text-align: left !important;
+        }
+
+        .premium-product-card:hover {
+            transform: translateY(-5px) !important;
+            box-shadow: 0 16px 35px rgba(0, 0, 0, 0.04) !important;
+            border-color: #D1D1D6 !important;
+        }
+
+        /* სურათის კონტეინერი */
+        .premium-img-box {
+            height: 200px !important;
+            background: #FAF9F6 !important;
+            border-radius: 14px !important;
+            display: flex !important;
+            align-items: center !important;
+            justify-content: center !important;
+            overflow: hidden !important;
+            padding: 1rem !important;
+        }
+
+        .premium-img-box img {
+            max-width: 85% !important;
+            max-height: 85% !important;
+            object-fit: contain !important;
+            mix-blend-mode: multiply !important;
+        }
+
+        /* ინფორმაციის სექცია */
+        .premium-product-card h3 {
+            font-size: 1.2rem !important;
+            font-weight: 700 !important;
+            color: #111111 !important;
+            margin: 0 !important;
+            letter-spacing: -0.2px !important;
+        }
+
+        .premium-product-card .price {
+            font-size: 1.15rem !important;
+            font-weight: 800 !important;
+            color: #111111 !important;
+            display: block !important;
+        }
+
+        .premium-product-card p {
+            font-size: 0.9rem !important;
+            color: #666666 !important;
+            line-height: 1.5 !important;
+            margin: 0 !important;
+            flex-grow: 1 !important; /* უზრუნველყოფს, რომ ღილაკები ყოველთვის ერთ სწორ ხაზზე იჯდეს */
+        }
+
+        /* პრემიუმ კალათის ღილაკი */
+        .premium-cart-button {
+            width: 100% !important;
+            background-color: #F5F5F7 !important;
+            color: #0071E3 !important;
+            border: none !important;
+            padding: 0.85rem !important;
+            border-radius: 10px !important;
+            font-size: 0.9rem !important;
+            font-weight: 600 !important;
+            cursor: pointer !important;
+            font-family: 'Plus Jakarta Sans', sans-serif !important;
+            transition: all 0.2s ease !important;
+            text-align: center !important;
+        }
+
+        .premium-cart-button:hover {
+            background-color: #0071E3 !important;
+            color: #FFFFFF !important;
+        }
+    </style>
 </head>
 <body>
-  <!-- Header -->
-  <header class="header">
-    <nav class="navbar">
-      <div class="logo"><a href="index.html">SafeHouse</a></div>
-      <div class="hamburger" onclick="toggleMenu()" id="hamburger">
-        <div></div>
-        <div></div>
-        <div></div>
-      </div>
-      <ul class="nav-links">
-        <li><a href="index.html" data-page="home">Home</a></li>
-        <li><a href="store.html" data-page="store" aria-current="page" class="active">Store</a></li>
-        <li><a href="cart.html" data-page="cart">Cart</a></li>
-        <li><a href="contact.html" data-page="contact">Contact</a></li>
-        <li><button class="search-trigger" onclick="toggleSearchBar()">Search</button></li>
-        <li id="userMenu">
-          <span id="userNickname" onclick="toggleDropdown()">Nickname</span>
-          <div class="dropdown-menu" id="dropdownMenu">
-            <a href="profile.html">Profile</a>
-            <a href="settings.html">Settings</a>
-            <a href="#" id="logoutLink">Logout</a>
-          </div>
-        </li>
-      </ul>
-      <div class="search-bar" id="searchBar">
-        <input type="text" id="search" placeholder="Search products..." />
-        <button type="submit">Search</button>
-      </div>
-    </nav>
-  </header>
 
-  <!-- Main Content -->
-  <main>
-    <section class="store-wrapper">
-      <!-- Filters Section -->
-      <aside class="filter-section">
-        <h3>Filters</h3>
-        <form id="filter-form">
-          <!-- Category Filter -->
-          <div class="filter-group">
-            <label for="category">Category:</label>
-            <select id="category" name="category">
-              <option value="">All Categories</option>
-              <option value="electronics">Electronics</option>
-              <option value="fashion">Fashion</option>
-              <option value="home">Home & Living</option>
-            </select>
-          </div>
-  
-          <!-- Price Range Filter -->
-          <div class="filter-group">
-            <label for="price-range">Price Range:</label>
-            <input type="number" id="min-price" name="min-price" placeholder="Min Price">
-            <input type="number" id="max-price" name="max-price" placeholder="Max Price">
-          </div>
-  
-          <!-- Ratings Filter -->
-          <div class="filter-group">
-            <label for="ratings">Ratings:</label>
-            <select id="ratings" name="ratings">
-              <option value="">All Ratings</option>
-              <option value="4">4 stars & up</option>
-              <option value="3">3 stars & up</option>
-              <option value="2">2 stars & up</option>
-            </select>
-          </div>
-  
-          <button type="submit" class="filter-btn">Apply Filters</button>
+    <header class="navbar">
+        <a href="index.html" class="logo">SafeHouse</a>
+        <nav class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="store.html" class="active">Store</a>
+            <a href="cart.html">Cart</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+        <form class="search-form" action="#" method="GET">
+            <input type="text" placeholder="Search...">
+            <button type="submit">Search</button>
         </form>
-      </aside>
-  
-      <!-- Store Section -->
-      <section class="store-section">
-        <h1>Our Products</h1>
-        <div id="product-container">
-          <!-- Products will be dynamically inserted here -->
-          <p>Loading products, please wait...</p>
-        </div>
-      </section>
-    </section>
-  </main>
-  
+    </header>
 
-  <!-- Footer -->
-  <footer class="footer">
-    <p>&copy; 2024 SafeHouse. All rights reserved.</p>
-  </footer>
+    <div style="text-align: center; margin-top: 5rem; margin-bottom: 4rem; padding: 0 1rem;">
+        <h1 class="section-title" style="margin-bottom: 0.5rem;">Explore Our Ecosystem</h1>
+        <p style="color: var(--text-muted); font-size: 1.05rem;">Premium automation hardware curated for next-generation homes.</p>
+    </div>
+
+    <div class="store-layout-wrapper">
+        <div class="store-grid">
+            
+            <div class="premium-product-card">
+                <div class="premium-img-box">
+                    <img src="images/switch.png" alt="Smart Light Switch" onerror="this.src='https://via.placeholder.com/200?text=Smart+Switch'">
+                </div>
+                <h3>Smart Light Switch</h3>
+                <span class="price">$29.99</span>
+                <p>Capacitive touch, seamless automation scheduling, and direct wireless cloud integration layers.</p>
+                <button class="premium-cart-button">Add to Cart</button>
+            </div>
+
+            <div class="premium-product-card">
+                <div class="premium-img-box">
+                    <img src="images/camera.png" alt="Security Camera" onerror="this.src='https://via.placeholder.com/200?text=Security+Camera'">
+                </div>
+                <h3>Security Camera</h3>
+                <span class="price">$39.99</span>
+                <p>Ultra HD 4K night-vision array with dynamic encryption layer software pre-installed safely.</p>
+                <button class="premium-cart-button">Add to Cart</button>
+            </div>
+
+            <div class="premium-product-card">
+                <div class="premium-img-box">
+                    <img src="images/lock.png" alt="Smart Digital Door Lock" onerror="this.src='https://via.placeholder.com/200?text=Door+Lock'">
+                </div>
+                <h3>Door Locker</h3>
+                <span class="price">$49.99</span>
+                <p>Biometric scanner architecture ensuring unbreakable entry protection grids for families.</p>
+                <button class="premium-cart-button">Add to Cart</button>
+            </div>
+
+            <div class="premium-product-card">
+                <div class="premium-img-box">
+                    <img src="images/doorbell.png" alt="Doorbell" onerror="this.src='https://via.placeholder.com/200?text=Smart+Doorbell'">
+                </div>
+                <h3>Smart Doorbell</h3>
+                <span class="price">$29.99</span>
+                <p>Two-way real-time communication audio matrix and high-angle secure video streams.</p>
+                <button class="premium-cart-button">Add to Cart</button>
+            </div>
+
+        </div>
+    </div>
+
+    <footer class="app-footer">
+        <p>© 2026 SafeHouse. All rights reserved. Future Engineering.</p>
+    </footer>
+
+    <script src="js/script.js"></script>
 </body>
 </html>

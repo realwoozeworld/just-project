@@ -1,86 +1,227 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Contact</title>
-  <link rel="stylesheet" href="css/styles.css">
-  <script defer src="js/common.js"></script>
-  <script defer src="js/script.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact SafeHouse - Support Matrix</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <style>
+        .contact-layout-wrapper {
+            display: grid !important;
+            grid-template-columns: 1fr 1fr !important;
+            gap: 2.5rem !important;
+            width: 100% !important;
+            max-width: 1200px !important;
+            margin: 3rem auto !important;
+            padding: 0 2rem !important;
+            align-items: start !important;
+            box-sizing: border-box !important;
+        }
+
+        .premium-contact-card {
+            background: #FFFFFF !important;
+            border: 1px solid #EAECE8 !important;
+            border-radius: 16px !important;
+            padding: 3rem !important;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.02) !important;
+            box-sizing: border-box !important;
+            width: 100% !important;
+        }
+
+        .premium-contact-card h2 {
+            font-size: 1.6rem !important;
+            font-weight: 700 !important;
+            margin-bottom: 2rem !important;
+            text-align: left !important;
+            color: #111111 !important;
+        }
+
+        .contact-details-column {
+            display: flex !important;
+            flex-direction: column !important;
+            gap: 2rem !important;
+            width: 100% !important;
+            box-sizing: border-box !important;
+        }
+
+        .premium-info-box {
+            background: #FFFFFF !important;
+            border: 1px solid #EAECE8 !important;
+            border-radius: 16px !important;
+            padding: 2.5rem !important;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.02) !important;
+        }
+
+        .premium-info-box h3 {
+            font-size: 1.25rem !important;
+            font-weight: 700 !important;
+            margin-bottom: 1rem !important;
+            color: #111111 !important;
+        }
+
+        .premium-info-box p {
+            color: #666666 !important;
+            font-size: 0.95rem !important;
+            line-height: 1.8 !important;
+        }
+
+        .premium-map-container {
+            border-radius: 16px !important;
+            overflow: hidden !important;
+            border: 1px solid #EAECE8 !important;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.02) !important;
+            width: 100% !important;
+            height: 350px !important;
+        }
+
+        .premium-map-container iframe {
+            width: 100% !important;
+            height: 100% !important;
+            border: none !important;
+            display: block !important;
+        }
+
+        /* ფორმის შიდა ინპუტების სრული გასწორება */
+        .premium-contact-card .input-group {
+            display: flex !important;
+            flex-direction: column !important;
+            gap: 0.5rem !important;
+            margin-bottom: 1.5rem !important;
+            width: 100% !important;
+        }
+
+        .premium-contact-card label {
+            font-size: 0.75rem !important;
+            font-weight: 700 !important;
+            text-transform: uppercase !important;
+            color: #666666 !important;
+            letter-spacing: 0.5px !important;
+        }
+
+        .premium-contact-card input, .premium-contact-card textarea {
+            width: 100% !important;
+            padding: 0.9rem 1.2rem !important;
+            border: 1px solid #EAECE8 !important;
+            background-color: #F5F5F7 !important;
+            color: #111111 !important;
+            font-family: 'Plus Jakarta Sans', sans-serif !important;
+            font-size: 0.95rem !important;
+            border-radius: 8px !important;
+            outline: none !important;
+            box-sizing: border-box !important;
+            transition: all 0.2s ease !important;
+        }
+
+        .premium-contact-card input:focus, .premium-contact-card textarea:focus {
+            border-color: #0071E3 !important;
+            background-color: #FFFFFF !important;
+            box-shadow: 0 0 0 4px #DDF4FF !important;
+        }
+
+        .premium-contact-card textarea {
+            resize: none !important;
+        }
+
+        .premium-submit-button {
+            width: 100% !important;
+            background-color: #111111 !important;
+            color: #FFFFFF !important;
+            border: none !important;
+            padding: 1rem !important;
+            border-radius: 8px !important;
+            font-size: 0.95rem !important;
+            font-weight: 600 !important;
+            cursor: pointer !important;
+            font-family: 'Plus Jakarta Sans', sans-serif !important;
+            transition: background 0.2s ease !important;
+        }
+
+        .premium-submit-button:hover {
+            background-color: #0071E3 !important;
+        }
+
+        @media (max-width: 850px) {
+            .contact-layout-wrapper {
+                grid-template-columns: 1fr !important;
+                padding: 0 1rem !important;
+            }
+        }
+    </style>
 </head>
 <body>
-  <!-- Header -->
-  <header class="header">
-    <nav class="navbar">
-      <div class="logo"><a href="index.html">SafeHouse</a></div>
-      <div class="hamburger" onclick="toggleMenu()" id="hamburger">
-        <div></div>
-        <div></div>
-        <div></div>
-      </div>
-      <ul class="nav-links">
-        <li><a href="index.html" data-page="home">Home</a></li>
-        <li><a href="store.html" data-page="store">Store</a></li>
-        <li><a href="cart.html" data-page="cart">Cart</a></li>
-        <li><a href="contact.html" data-page="contact" aria-current="page" class="active">Contact</a></li>
-        <li><button class="search-trigger" onclick="toggleSearchBar()">Search</button></li>
-        <li id="userMenu">
-          <span id="userNickname" onclick="toggleDropdown()">Nickname</span>
-          <div class="dropdown-menu" id="dropdownMenu">
-            <a href="profile.html">Profile</a>
-            <a href="settings.html">Settings</a>
-            <a href="#" id="logoutLink">Logout</a>
-          </div>
-        </li>
-      </ul>
-      <div class="search-bar" id="searchBar">
-        <input type="text" id="search" placeholder="Search products..." />
-        <button type="submit">Search</button>
-      </div>
-    </nav>
-  </header>
 
-  <!-- Main Content -->
-  <main>
-    <section class="contact-section">
-      <h1>Contact Us</h1>
-      <p>Have a question or just want to say hello? We'd love to hear from you!</p>
-      <div class="contact-container"></div>
-      <!-- Contact Form -->
-      <div class="contact-form">
-      <form id="contact-form">
-        <div class="form-group">
-          <label for="name">Name:</label>
-          <input type="text" id="name" name="name" placeholder="Your Name" required>
+    <header class="navbar">
+        <a href="index.html" class="logo">SafeHouse</a>
+        <nav class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="store.html">Store</a>
+            <a href="cart.html">Cart</a>
+            <a href="contact.html" class="active">Contact</a>
+        </nav>
+        <form class="search-form" action="#" method="GET">
+            <input type="text" placeholder="Search...">
+            <button type="submit">Search</button>
+        </form>
+    </header>
+
+    <h1 class="section-title" style="text-align: center; margin-top: 4rem; margin-bottom: 1rem;">Get in Touch</h1>
+
+    <div class="contact-layout-wrapper">
+        
+        <div class="premium-contact-card">
+            <form action="#" method="POST" onsubmit="event.preventDefault(); alert('Message logged securely in cloud matrix!');">
+                <h2>Send a Message</h2>
+                
+                <div class="input-group">
+                    <label>Your Full Name</label>
+                    <input type="text" placeholder="Nodo Khutsishvili" required>
+                </div>
+                
+                <div class="input-group">
+                    <label>Email Address</label>
+                    <input type="email" placeholder="nodo@safehouse.ge" required>
+                </div>
+                
+                <div class="input-group">
+                    <label>Message Requirements</label>
+                    <textarea rows="5" placeholder="How can our engineering teams assist you?" required></textarea>
+                </div>
+                
+                <button type="submit" class="premium-submit-button">Transmit Message</button>
+            </form>
         </div>
-        <div class="form-group">
-          <label for="email">Email:</label>
-          <input type="email" id="email" name="email" placeholder="Your Email" required>
+
+        <div class="contact-details-column">
+            <div class="premium-info-box">
+                <h3>HQ Command Center</h3>
+                <p>
+                    <strong>Axis Towers</strong>, 37m Ilia Chavchavadze Avenue<br>
+                    Tbilisi, 0162, Georgia<br><br>
+                    <strong>Secure Line:</strong> +995 322 00 00 00<br>
+                    <strong>Network Node:</strong> operations@safehouse.ge
+                </p>
+            </div>
+            
+            <div class="premium-map-container">
+                <iframe 
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2979.030501174987!2d44.75338007659556!3d41.70903337126131!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4044733ebdfccb23%3A0x6e7884da45934149!2sAxis%20Towers!5e0!3m2!1sen!2sge!4v1717000000000!5m2!1sen!2sge" 
+                    allowfullscreen="" 
+                    loading="lazy" 
+                    referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
+            </div>
         </div>
-        <div class="form-group">
-          <label for="subject">Subject:</label>
-          <input type="text" id="subject" name="subject" placeholder="Subject">
-        </div>
-        <div class="form-group">
-          <label for="message">Message:</label>
-          <textarea id="message" name="message" placeholder="Your Message" rows="5" required></textarea>
-        </div>
-        <button type="submit" aria-label="Send message">Send Message</button>
-      </form>
-      <div id="form-response" style="display: none;"></div>
-      
-      <!-- Map -->
-      <div class="contact-map">
-        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d29313.330067905197!2d44.7405822!3d41.7234944!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40447311c5a4fd2d%3A0xb51a5da2ec2d9d2a!2z4YOh4YOY4YOX4YOYIOGDm-GDneGDmuGDmA!5e1!3m2!1sen!2sge!4v1732277459456!5m2!1sen!2sge"></iframe>
-      </div>
+
     </div>
-   </div> 
-  </section>
-</main>
 
-  <!-- Footer -->
-  <footer class="footer">
-    <p>© 2024 Your Company. All Rights Reserved.</p>
-  </footer>
+    <footer class="app-footer" style="margin-top: 5rem;">
+        <p>© 2026 SafeHouse. All rights reserved. Future Engineering.</p>
+    </footer>
+
+    <script src="js/script.js"></script>
 </body>
 </html>

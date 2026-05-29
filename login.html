@@ -1,27 +1,139 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login</title>
+    <title>Login - SafeHouse Secure Access</title>
     <link rel="stylesheet" href="css/styles.css">
-    <script defer src="js/auth.js"></script>
-  </head>
-  <body>
-    <main class="auth-container">
-      <h1>Login</h1>
-      <form id="loginForm">
-        <div class="form-group">
-          <label for="email">Email:</label>
-          <input type="email" id="email" required />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <style>
+        .auth-layout-container {
+            max-width: 500px !important;
+            margin: 5rem auto !important;
+            padding: 0 1.5rem !important;
+            box-sizing: border-box !important;
+            width: 100% !important;
+        }
+
+        .premium-auth-card {
+            background: #FFFFFF !important;
+            border: 1px solid #EAECE8 !important;
+            border-radius: 24px !important;
+            padding: 3.5rem 3rem !important;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.015) !important;
+            box-sizing: border-box !important;
+            width: 100% !important;
+        }
+
+        .premium-auth-card .section-title {
+            font-size: 1.8rem !important;
+            font-weight: 800 !important;
+            letter-spacing: -0.5px !important;
+            margin-bottom: 2.5rem !important;
+            text-align: center !important;
+            color: #111111 !important;
+        }
+
+        .premium-auth-card .input-group {
+            display: flex !important;
+            flex-direction: column !important;
+            gap: 0.5rem !important;
+            margin-bottom: 1.5rem !important;
+            width: 100% !important;
+        }
+
+        .premium-auth-card label {
+            font-size: 0.75rem !important;
+            font-weight: 700 !important;
+            text-transform: uppercase !important;
+            color: #86868B !important;
+            letter-spacing: 0.5px !important;
+        }
+
+        .premium-auth-card input {
+            width: 100% !important;
+            padding: 0.9rem 1.2rem !important;
+            border: 1px solid #EAECE8 !important;
+            background-color: #F5F5F7 !important;
+            color: #111111 !important;
+            font-family: 'Plus Jakarta Sans', sans-serif !important;
+            font-size: 0.95rem !important;
+            border-radius: 10px !important;
+            outline: none !important;
+            box-sizing: border-box !important;
+            transition: all 0.2s ease !important;
+        }
+
+        .premium-auth-card input:focus {
+            border-color: #0071E3 !important;
+            background-color: #FFFFFF !important;
+            box-shadow: 0 0 0 4px #DDF4FF !important;
+        }
+
+        .premium-auth-btn {
+            width: 100% !important;
+            background-color: #111111 !important;
+            color: #FFFFFF !important;
+            border: none !important;
+            padding: 1.1rem !important;
+            border-radius: 12px !important;
+            font-size: 0.95rem !important;
+            font-weight: 600 !important;
+            cursor: pointer !important;
+            font-family: 'Plus Jakarta Sans', sans-serif !important;
+            transition: all 0.2s ease !important;
+            margin-top: 1rem !important;
+        }
+
+        .premium-auth-btn:hover {
+            background-color: #0071E3 !important;
+            transform: translateY(-1px) !important;
+        }
+    </style>
+</head>
+<body>
+
+    <header class="navbar">
+        <a href="index.html" class="logo">SafeHouse</a>
+        <nav class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="store.html">Store</a>
+            <a href="cart.html">Cart</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+        <form class="search-form" action="#" method="GET">
+            <input type="text" placeholder="Search...">
+            <button type="submit">Search</button>
+        </form>
+    </header>
+
+    <div class="auth-layout-container">
+        <div class="premium-auth-card">
+            <form action="#" method="POST">
+                <h1 class="section-title">Account Login</h1>
+                
+                <div class="input-group">
+                    <label>Secure Node Email</label>
+                    <input type="email" placeholder="nodo@safehouse.ge" required>
+                </div>
+                
+                <div class="input-group" style="margin-bottom: 2rem;">
+                    <label>Access Password</label>
+                    <input type="password" placeholder="••••••••" required>
+                </div>
+                
+                <button type="submit" class="premium-auth-btn">Authenticate Identity</button>
+            </form>
         </div>
-        <div class="form-group">
-          <label for="password">Password:</label>
-          <input type="password" id="password" required />
-        </div>
-        <button type="submit">Login</button>
-        <p>Don't have an account? <a href="register.html">Register here</a></p>
-      </form>
-    </main>
-  </body>
+    </div>
+
+    <footer class="app-footer">
+        <p>© 2026 SafeHouse. All rights reserved. Future Engineering.</p>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
 </html>

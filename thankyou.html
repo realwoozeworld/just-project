@@ -1,52 +1,108 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Thank You - SafeHouse</title>
-    <link rel="stylesheet" href="css/styles.css"> <!-- Link to your CSS file -->
-</head>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <style>
+        .thankyou-layout-container {
+            max-width: 600px !important;
+            margin: 5rem auto !important;
+            padding: 0 1.5rem !important;
+            text-align: center !important;
+            box-sizing: border-box !important;
+            width: 100% !important;
+        }
 
+        .success-icon-badge {
+            width: 80px !important;
+            height: 80px !important;
+            background: #EAF9EE !important;
+            color: #34C759 !important;
+            font-size: 2.2rem !important;
+            border-radius: 50% !important;
+            display: inline-flex !important;
+            align-items: center !important;
+            justify-content: center !important;
+            margin-bottom: 1.5rem !important;
+        }
+
+        .premium-receipt-card {
+            background: #FFFFFF !important;
+            border: 1px solid #EAECE8 !important;
+            border-radius: 20px !important;
+            padding: 2.5rem !important;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.01) !important;
+            text-align: left !important;
+            margin-top: 2.5rem !important;
+            display: flex !important;
+            flex-direction: column !important;
+            gap: 1.25rem !important;
+        }
+
+        .premium-receipt-card p {
+            display: flex !important;
+            justify-content: space-between !important;
+            font-size: 0.95rem !important;
+            color: #111111 !important;
+            margin: 0 !important;
+            border-bottom: 1px solid #F5F5F7 !important;
+            padding-bottom: 0.75rem !important;
+        }
+
+        .premium-receipt-card p:last-child {
+            border: none !important;
+            padding: 0 !important;
+        }
+
+        .premium-receipt-card strong {
+            color: #666666 !important;
+            font-weight: 600 !important;
+        }
+
+        .receipt-value-highlight {
+            font-family: monospace !important;
+            color: #0071E3 !important;
+            font-weight: 700 !important;
+            font-size: 1rem;
+        }
+    </style>
+</head>
 <body>
-    <!-- Header with Navigation Bar -->
-    <header class="header">
-        <nav class="navbar">
-            <div class="logo"><a href="index.html">SafeHouse</a></div>
-            <div class="hamburger" onclick="toggleMenu()" id="hamburger">
-                <div></div>
-                <div></div>
-                <div></div>
-              </div>
-            <ul class="nav-links">
-                <li><a href="index.html" data-page="home">Home</a></li>
-                <li><a href="store.html" data-page="store">Store</a></li>
-                <li><a href="cart.html" data-page="cart">Cart</a></li>
-                <li><a href="contact.html" data-page="contact">Contact</a></li>
-            </ul>
+
+    <header class="navbar">
+        <a href="index.html" class="logo">SafeHouse</a>
+        <nav class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="store.html">Store</a>
+            <a href="cart.html">Cart</a>
+            <a href="contact.html">Contact</a>
         </nav>
     </header>
 
-    <!-- Thank You Container -->
-    <div class="thank-you-container">
-        <h1>Thank You for Your Purchase!</h1>
-        <p>Your order has been successfully placed. We are currently processing your payment.</p>
+    <div class="thankyou-layout-container">
+        <div class="success-icon-badge">✓</div>
+        <h1 class="section-title" style="margin-bottom: 0.5rem;">Order Confirmed</h1>
+        <p style="color: var(--text-muted); font-size: 1.05rem; max-width: 500px; margin: 0 auto;">
+            Thank you for your investment. Your smart home security nodes are currently synchronizing with our dispatch cores.
+        </p>
 
         <div class="order-summary">
-            <h3>Order Summary</h3>
-            <p><strong>Order Number:</strong></p>
-            <p><strong>Order Total:</strong></p>
-            <p><strong>Shipping Address:</strong></p>
-            <p><strong>Payment Method:</strong> </p>
+            <p style="text-align: center; color: var(--text-muted);">Fetching encrypted transaction log...</p>
         </div>
 
-        <a href="store.html" class="btn-return">Return to Store</a>
+        <a href="store.html" class="btn-primary" style="margin-top: 3rem; border-radius: 12px; padding: 1.1rem 3rem;">Return to Store</a>
     </div>
 
-    <!-- Footer -->
-    <footer class="footer">
-        <p>© 2024 SafeHouse. All Rights Reserved.</p>
+    <footer class="app-footer">
+        <p>© 2026 SafeHouse. All rights reserved. Future Engineering.</p>
     </footer>
-</body>
 
+    <script src="js/script.js"></script>
+</body>
 </html>
